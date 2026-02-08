@@ -4,15 +4,15 @@
 int main() {
     Array arr;
 
-    /* 1. init / create */
+    // 1. init / create 
     createArray(&arr);
     printf("Array dibuat.\n");
 
-    /* 2. isEmpty */
+    // 2. isEmpty 
     if (isEmpty(arr))
         printf("Array masih kosong.\n");
 
-    /* 3. insert */
+    // 3. insert 
     printf("\nMenambahkan data...\n");
     insert(&arr, 10);
     insert(&arr, 20);
@@ -21,10 +21,10 @@ int main() {
 
     display(arr);
 
-    /* 4. length */
+    // 4. length 
     printf("Jumlah elemen: %d\n", length(arr));
 
-    /* 5. search */
+    // 5. search 
     int cari = 20;
     int idx = search(arr, cari);
     if (idx != -1)
@@ -32,13 +32,13 @@ int main() {
     else
         printf("Data %d tidak ditemukan\n", cari);
 
-    /* 6. remove */
+    // 6. remove 
     printf("\nMenghapus data 20...\n");
     removeData(&arr, 20);
     display(arr);
     printf("Jumlah elemen setelah delete: %d\n", length(arr));
 
-    /* 7. allocate & deallocate (konseptual) */
+    // 7. allocate & deallocate
     printf("\nDemo allocate & deallocate (konseptual)...\n");
     if (allocate(&arr, 99)) {
         arr.size++;
@@ -48,11 +48,11 @@ int main() {
 
     display(arr);
 
-    /* 8. destroy */
+    // 8. destroy 
     printf("\nMenghapus seluruh array...\n");
     destroy(&arr);
 
-    /* 9. isEmpty setelah destroy */
+    // 9. isEmpty setelah destroy 
     if (isEmpty(arr))
         printf("Array berhasil dikosongkan.\n");
 
