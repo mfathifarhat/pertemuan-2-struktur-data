@@ -1,102 +1,39 @@
 #ifndef ARRAY_H
 #define ARRAY_H
 
-#include <stdbool.h>
+#define MAX 100
 
-/* Data Structure */
 typedef struct {
-    int *data;      /* Pointer to the data */
-    int capacity;   /* Max elements currently possible */
-    int neff;       /* Number of effective elements */
-} DynamicList;
+    int data[MAX];
+    int size;
+} Array;
 
-/* Function Prototypes */
+// Prosedur untuk membuat Array
+void createArray(Array *arr);
 
-/**
- * Initialize the struct, set capacity, and malloc the initial memory.
- * @param L Pointer to the list to initialize
- * @param capacity Initial capacity of the list
- */
-void CreateList(DynamicList *L, int capacity);
+// Fungsi untuk mengecek apakah array kosong
+int isEmpty(Array arr);
 
-/**
- * Check if the list has 0 elements.
- * @param L The list to check
- * @return true if empty, false otherwise
- */
-bool IsEmpty(DynamicList L);
+// Manajemen Memory
+int allocate(Array *arr, int value);
+void deallocate(Array *arr);
 
-/**
- * Return the current number of elements (neff).
- * @param L The list
- * @return The number of elements
- */
-int Length(DynamicList L);
+// Prosedur untuk menambahkan data
+int insert(Array *arr, int value);
 
-/**
- * Add an element to the list at the specified index.
- * Handles array shifting and auto-resizing if full.
- * @param L Pointer to the list
- * @param el The element to add
- * @param index The index at which to add the element
- */
-void InsertAt(DynamicList *L, int el, int index);
+// Fungsi untuk mencari data
+int search(Array arr, int value);
 
-/**
- * Add an element to the beginning of the list.
- * @param L Pointer to the list
- * @param el The element to add
- */
-void InsertFirst(DynamicList *L, int el);
+// Prosedur untuk menghapus data
+int removeData(Array *arr, int value);
 
-/**
- * Add an element to the end of the list.
- * @param L Pointer to the list
- * @param el The element to add
- */
-void InsertLast(DynamicList *L, int el);
+// Prosedur untuk menghapus seluruh list
+void destroy(Array *arr);
 
-/**
- * Find an element by value and return its index.
- * @param L The list to search
- * @param el The element to search for
- * @return The index of the element, or -1 if not found
- */
-int Search(DynamicList L, int el);
+// Fungsi untuk mengambil jumlah node
+int length(Array arr);
 
-/**
- * Delete an element from the list at the specified index.
- * Handles array shifting.
- * @param L Pointer to the list
- * @param index The index of the element to delete
- * @param el Pointer to store the deleted element
- */
-void DeleteAt(DynamicList *L, int index, int *el);
-
-/**
- * Delete the first element of the list.
- * @param L Pointer to the list
- * @param el Pointer to store the deleted element
- */
-void DeleteFirst(DynamicList *L, int *el);
-
-/**
- * Delete the last element of the list.
- * @param L Pointer to the list
- * @param el Pointer to store the deleted element
- */
-void DeleteLast(DynamicList *L, int *el);
-
-/**
- * Clean up everything (free memory).
- * @param L Pointer to the list to destroy
- */
-void DestroyList(DynamicList *L);
-
-/**
- * Print the array state (helper for testing).
- * @param L The list to print
- */
-void PrintList(DynamicList L);
+// Prosedur untuk menampilkan data
+void display(Array arr);
 
 #endif
