@@ -1,0 +1,37 @@
+--- Dynamic Array List ADT Test ---
+
+1. Initializing List with capacity 4:
+-> List is empty.
+[ ] (Size: 0, Cap: 4)
+
+2. Adding elements (InsertLast 10, 20, 30):
+[ 10 20 30 ] (Size: 3, Cap: 4)
+
+3. Adding element (InsertFirst 5):
+[ 5 10 20 30 ] (Size: 4, Cap: 4)
+
+4. Adding element (InsertAt 25 at index 3) - CURRENTLY FULL:
+[ 5 10 20 25 30 ] (Size: 5, Cap: 8)
+
+5. Adding more elements to verify capacity growth:
+[ 5 10 20 25 30 40 50 60 ] (Size: 8, Cap: 8)
+
+6. Searching for element 25:
+-> Element 25 found at index: 3
+
+7. Delete First:
+-> Deleted: 5
+[ 10 20 25 30 40 50 60 ] (Size: 7, Cap: 8)
+
+8. Delete Last:
+-> Deleted: 60
+[ 10 20 25 30 40 50 ] (Size: 6, Cap: 8)
+
+9. Delete At index 2:
+-> Deleted: 25
+[ 10 20 30 40 50 ] (Size: 5, Cap: 8)
+
+10. Final Length: 5
+
+11. Destroying List:
+-> List destroyed and memory freed.
